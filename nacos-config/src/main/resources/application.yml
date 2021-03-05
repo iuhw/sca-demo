@@ -1,0 +1,13 @@
+server:
+  port: 8000
+# Nacos帮助文档: https://nacos.io/zh-cn/docs/concepts.html
+spring:
+  application:
+    name: nacos-config-sample
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        file-extension: properties
+        namespace:

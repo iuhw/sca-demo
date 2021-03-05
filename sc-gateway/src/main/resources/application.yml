@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: sc-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: nacos-dubbo-consumer
+          uri: lb://nacos-dubbo-consumer
+          predicates:
+            - Path=/echo/**
