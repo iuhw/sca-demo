@@ -16,4 +16,4 @@ spring:
         - id: nacos-dubbo-consumer
           uri: lb://nacos-dubbo-consumer
           predicates:
-            - Path=/echo/**
+            - Path=/**

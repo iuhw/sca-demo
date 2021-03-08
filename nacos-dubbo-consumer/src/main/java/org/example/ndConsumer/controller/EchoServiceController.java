@@ -18,12 +18,12 @@ public class EchoServiceController {
     private EchoService echoService;
 
     @GetMapping("/echo/{message}")
-    public String echo(String message) {
+    public String echo(@PathVariable("message") String message) {
         return echoService.echo(message);
     }
 
     @GetMapping("/call/echo/{message}")
-    public String callEcho(@PathVariable String message) {
-        return restTemplate.getForObject("http://nacos-dubbo-provider/echo/" + message, String.class);
+    public String callEcho(@PathVariable("message") String message) {
+        return restTemplate.getForObject("http://nacos-dubbo-provider/controller/hello/" + message, String.class);
     }
 }
